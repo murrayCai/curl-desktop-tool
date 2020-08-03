@@ -1,0 +1,6 @@
+aux_source_directory(. cfiles)
+add_executable(cdt ${cfiles})
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(GTK3 REQUIRED gtk+-3.0)
+pkg_check_modules(CURL REQUIRED libcurl)
+target_link_libraries(cdt ${CURL_LIBRARIES} ${GTK3_LIBRARIES})
